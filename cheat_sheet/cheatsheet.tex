@@ -1,0 +1,85 @@
+\documentclass[9pt, a4paper]{extarticle}
+
+\usepackage[ngerman]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+\usepackage{multicol}
+\usepackage{titlesec}
+
+\setlength{\parindent}{0pt}
+\usepackage{enumitem}
+\usepackage[a4paper, left=0cm, right=0cm, top=0cm, bottom=0cm, landscape=true]{geometry}
+\allowdisplaybreaks
+\titlespacing*{\section}{0pt}{0pt}{0pt}
+\titlespacing*{\subsection}{0pt}{0.5pt}{0.6pt}
+\titlespacing*{\subsubsection}{0pt}{0.5pt}{0.6pt}
+
+\DeclareMathOperator{\decode}{decode}
+\DeclareMathOperator{\code}{code}
+\DeclareMathOperator{\loope}{LOOP}
+\DeclareMathOperator{\var}{var}
+\DeclareMathOperator{\ife}{IF}
+\DeclareMathOperator{\elsee}{ELSE}
+\DeclareMathOperator{\while}{WHILE}
+\DeclareMathOperator{\dive}{DIV}
+\DeclareMathOperator{\pr}{pr}
+\DeclareMathOperator{\undef}{undef}
+\DeclareMathOperator{\nf}{nf}
+\DeclareMathOperator{\NP}{NP}
+\DeclareMathOperator{\np}{np}
+\DeclareMathOperator{\mult}{mult}
+\DeclareMathOperator{\add}{add}
+\DeclareMathOperator{\sub}{sub}
+\DeclareMathOperator{\vg}{vg}
+
+\begin{document}
+\setlist{nolistsep}
+
+\begin{multicols}{5}
+    \textbf{maschine learning} Algorithm learns class of tasks, measured by loss function, from experience.
+
+    \textbf{supervised learning} learn $h: \Delta^* \to \Sigma^*, h=t$; example: $(x,y)\in\Delta^*\times\Sigma^*,\ t(x)=y$.
+
+    \textbf{unsupervised learning} learn $h: \Delta^* \to \Sigma^*, \ker(h)=\ker(t)$; example: $x\in\Delta^*$.
+
+    \textbf{reinforcement learning} learn strategy based on feedback from environment.
+    \section{Supervised Learning}
+    - model function $t: \mathcal{M} \to \mathcal{R}$
+
+    - $supp(t)=\{m\in \mathcal{M} \mid t(m) \neq 0\}$
+
+    \textbf{Hypothesis} of A: potential result of A
+
+    \textbf{Hypothesis space} $\mathcal{H}_A$ of A: set of all hypotheses
+
+    \textbf{h fits D} if $h(x_i)=y_i$ for all $(x_i,y_i)\in D$
+
+    \textbf{Version space} $\mathcal{V}_A(D)$ of A: all hypotheses that fit D
+
+    \textbf{Inductive bias} of A: set of assumptions that A uses to predict outputs of unseen data
+
+    \textbf{Conjunctive Clause} $\theta=(\theta_1, ..., \theta_k), \theta_i \in M_i\cup \{\star, \bot\}  $
+
+    - $\theta_\bot = (\bot, ..., \bot)$ most specific
+
+    - $\theta_\star = (\star, ..., \star)$ most general
+
+    - $supp(h_{\theta_\bot})=\emptyset, supp(h_{\theta_\star})=\mathcal{M}$
+
+    - $h_{\theta_\bot}=h_{(\theta_1, ..., \bot, ..., \theta_k) = ...}$
+
+    induced hypothesis $h_\theta (m_1, ..., m_k)=1$ if $\forall i: \theta_i \in
+        \{m_i, \star\}$ else $0$
+
+    \textbf{loss
+        functions (and derivatives)}
+    \begin{itemize}
+        \item $l(h, D)=\sum_{i=1}^{n}(1-\delta_{y_i, h(x_i)})$
+        \item  $\delta_{ij} =1 \text{ if } i = j,0  \text{ otherwise.}$
+        \item asd
+    \end{itemize}
+\end{multicols}
+\end{document}
