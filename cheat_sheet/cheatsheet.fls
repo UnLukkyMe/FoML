@@ -1,6 +1,6 @@
-PWD c:\Users\Richm\Documents\Studium\5Semester\FoML\cheat_sheet
+PWD c:\Users\Richm\Documents\Studium\5Semester\FoML\FoML\cheat_sheet
 INPUT C:\Users\Richm\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
-INPUT c:\Users\Richm\Documents\Studium\5Semester\FoML\cheat_sheet\cheatsheet.tex
+INPUT c:\Users\Richm\Documents\Studium\5Semester\FoML\FoML\cheat_sheet\cheatsheet.tex
 OUTPUT cheatsheet.log
 INPUT S:\ProgrammierShit\MikTeX\tex\latex\extsizes\extarticle.cls
 INPUT S:\ProgrammierShit\MikTeX\tex\latex\extsizes\extarticle.cls
@@ -70,6 +70,8 @@ INPUT .\cheatsheet.aux
 INPUT .\cheatsheet.aux
 INPUT cheatsheet.aux
 OUTPUT cheatsheet.aux
+INPUT S:\ProgrammierShit\MikTeX\fonts\tfm\public\lm\ec-lmr10.tfm
+INPUT S:\ProgrammierShit\MikTeX\fonts\tfm\public\lm\ec-lmbx10.tfm
 INPUT S:\ProgrammierShit\MikTeX\fonts\tfm\public\lm\ec-lmbx9.tfm
 INPUT S:\ProgrammierShit\MikTeX\tex\latex\lm\ot1lmr.fd
 INPUT S:\ProgrammierShit\MikTeX\tex\latex\lm\ot1lmr.fd
@@ -111,16 +113,16 @@ INPUT S:\ProgrammierShit\MikTeX\tex\latex\lm\ts1lmr.fd
 INPUT S:\ProgrammierShit\MikTeX\tex\latex\lm\ts1lmr.fd
 INPUT S:\ProgrammierShit\MikTeX\tex\latex\lm\ts1lmr.fd
 INPUT S:\ProgrammierShit\MikTeX\fonts\tfm\public\lm\ts1-lmr9.tfm
-INPUT S:\ProgrammierShit\MikTeX\fonts\tfm\public\lm\ec-lmr6.tfm
-INPUT S:\ProgrammierShit\MikTeX\fonts\tfm\public\lm\ec-lmr5.tfm
 OUTPUT cheatsheet.pdf
 INPUT C:\Users\Richm\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
 INPUT S:\ProgrammierShit\MikTeX\fonts\enc\dvips\lm\lm-ec.enc
 INPUT S:\ProgrammierShit\MikTeX\fonts\enc\dvips\lm\lm-mathit.enc
 INPUT S:\ProgrammierShit\MikTeX\fonts\enc\dvips\lm\lm-rm.enc
 INPUT S:\ProgrammierShit\MikTeX\fonts\enc\dvips\lm\lm-mathsy.enc
-INPUT S:\ProgrammierShit\MikTeX\fonts\enc\dvips\lm\lm-ts1.enc
 INPUT S:\ProgrammierShit\MikTeX\fonts\enc\dvips\lm\lm-mathex.enc
+INPUT S:\ProgrammierShit\MikTeX\fonts\enc\dvips\lm\lm-ts1.enc
+INPUT S:\ProgrammierShit\MikTeX\fonts\tfm\public\lm\ec-lmr6.tfm
+INPUT S:\ProgrammierShit\MikTeX\fonts\tfm\public\lm\ec-lmr5.tfm
 INPUT cheatsheet.aux
 INPUT S:\ProgrammierShit\MikTeX\fonts\type1\public\lm\lmbx10.pfb
 INPUT S:\ProgrammierShit\MikTeX\fonts\type1\public\lm\lmbx10.pfb
@@ -146,3 +148,5 @@ INPUT S:\ProgrammierShit\MikTeX\fonts\type1\public\lm\lmsy6.pfb
 INPUT S:\ProgrammierShit\MikTeX\fonts\type1\public\lm\lmsy6.pfb
 INPUT S:\ProgrammierShit\MikTeX\fonts\type1\public\lm\lmsy9.pfb
 INPUT S:\ProgrammierShit\MikTeX\fonts\type1\public\lm\lmsy9.pfb
+INPUT S:\ProgrammierShit\MikTeX\fonts\type1\public\amsfonts\symbols\msbm10.pfb
+INPUT S:\ProgrammierShit\MikTeX\fonts\type1\public\amsfonts\symbols\msbm10.pfb

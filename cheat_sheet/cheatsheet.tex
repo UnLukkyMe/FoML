@@ -11,7 +11,7 @@
 
 \setlength{\parindent}{0pt}
 \usepackage{enumitem}
-\usepackage[a4paper, left=0cm, right=0cm, top=0cm, bottom=0cm, landscape=true]{geometry}
+\usepackage[a4paper, left=0cm, right=0cm, top=0cm, bottom=0.2cm, landscape=true]{geometry}
 \allowdisplaybreaks
 \titlespacing*{\section}{0pt}{0pt}{0pt}
 \titlespacing*{\subsection}{0pt}{0.5pt}{0.6pt}
@@ -39,7 +39,7 @@
 \setlist{nolistsep}
 
 \begin{multicols}{5}
-    \textbf{maschine learning} Algorithm learns class of tasks, measured by loss function, from experience.
+    \section{Maschine Learning} Algorithm learns class of tasks, measured by loss function, from experience.
 
     \textbf{supervised learning} learn $h: \Delta^* \to \Sigma^*, h=t$; example: $(x,y)\in\Delta^*\times\Sigma^*,\ t(x)=y$.
 
@@ -51,6 +51,8 @@
 
     - $supp(t)=\{m\in \mathcal{M} \mid t(m) \neq 0\}$
 
+    - $\bar{m} \in supp(t) \Leftrightarrow t(\bar{m})=1$
+
     \textbf{Hypothesis} of A: potential result of A
 
     \textbf{Hypothesis space} $\mathcal{H}_A$ of A: set of all hypotheses
@@ -61,7 +63,9 @@
 
     \textbf{Inductive bias} of A: set of assumptions that A uses to predict outputs of unseen data
 
-    \textbf{Conjunctive Clause} $\theta=(\theta_1, ..., \theta_k), \theta_i \in M_i\cup \{\star, \bot\}  $
+    \subsection{Conjunctive Clause}
+
+    $\theta=(\theta_1, ..., \theta_k), \theta_i \in M_i\cup \{\star, \bot\}  $
 
     - $\theta_\bot = (\bot, ..., \bot)$ most specific
 
@@ -74,12 +78,131 @@
     induced hypothesis $h_\theta (m_1, ..., m_k)=1$ if $\forall i: \theta_i \in
         \{m_i, \star\}$ else $0$
 
-    \textbf{loss
-        functions (and derivatives)}
+    $h \preceq h'$ if $supp(h) \subseteq supp(h')$. $h$ is more specfic (less general) than $h'$
+
+    \textbf{Find-S Algorithm} finds most specific conjunctive clause that fits D
+    \begin{enumerate}
+        \item Start with $\theta_\bot=(\bot, ..., \bot)$
+        \item iterate over POSITIVE examples
+        \item min-generalize $\theta$ to fit example
+        \item $\bot \to a, a \to \star$
+    \end{enumerate}
+    - maximal general hypothsis:
+    \begin{enumerate}
+        \item start at $\theta_\star = (\star, ..., \star)$
+        \item exclude every negative example
+        \item $(\star, ...) \to \{(b, ...), (c, ...)...   \}$
+    \end{enumerate}
+
+    - If $V_A(D) \neq \emptyset$, Find-S finds $h\in V_A(D)$
+
+    \textbf{disjunctive normal form} $\Theta = \{\theta_1, ..., \theta_m\}$
+
+    'finite set of conjunctive clauses'
+
+    induced hypothesis $h_\Theta (\bar{m})=1$ if $\exists \theta \in \Theta:
+        h_\theta(\bar{m})=1$ else $0$
+
+    - $supp(\Theta) = \bigcup_{\theta \in \Theta} supp(h_\theta)$
+
+    - can represent all boolean functions
+    \par
+    \columnbreak
+    \textbf{Boundary sets of version space}
+
+    maximally general hypotheses $V_A^\top(D) =$
+
+    $ \{h \in V_A(D) \mid \nexists h' \in V_A(D): h \prec h'\}$
+
+    maximally specific hypotheses $V_A^\bot(D)=$
+
+    $\{ h \in V_A(D) \mid \nexists h' \in V_A(D): h' \preceq h\}$
+
+    -$h\in V_A^\top$ maximal, weil: $\forall x \in M\setminus supp(h): supp(h)\cup \{x \} \notin supp(V_A(D))$
+
+    Theorem: $V_A(D)=\{h \in H_A | \exists h_\top \in V_A^\top(D), \exists h_\bot
+        \in V_A^\bot(D): h_\bot \preceq h \preceq h_\top\}$
+
+    -> $V_A(D)$ det. by $V_A^\top(D)$ and $V_A^\bot(D)$
+
+    - only 1 lower bound (in $V_A^\bot(D)$), potentially multiple upper bounds (in $V_A^\top(D)$)
+
+    \textbf{Candidate Elimination Algorithm}
+
+    Output: DNF for $V_A^\top(D)$ and $V_A^\bot(D)$
+
+    1. $S_\bot=\{\theta_\bot\}, S_\top=\{\theta_\star\}$
+
+    2. for $1\leq i \leq n: y_i=1$ (pos. xmpls)
+    \begin{enumerate}
+        \item keep only fitting h from $S_\top$
+        \item $\forall \theta \in S_\bot: h_\theta(x_i)=0$
+
+              - remove $\theta$, add all min generalizations $\theta'$ of $\theta$ that fit $x_i$ to $S_\bot$
+        \item keep only most specific h in $S_\bot$
+    \end{enumerate}
+    3. for $1\leq i \leq n: y_i=0$ (neg. xmpls)
+    \begin{enumerate}
+        \item keep only fitting h from $S_\bot$
+        \item $\forall \theta \in S_\top: h_\theta(x_i)=1$
+
+              - remove $\theta$, add all min specializations $\theta'$ of $\theta$ that fit $x_i$ to $S_\top$,
+
+              for which a more specific $\theta_\bot \in S_\bot$ exists!
+        \item keep only most general h in $S_\top$
+
+    \end{enumerate}
+    - $V_A^\top=\{h_\theta | \theta \in S_\top\}$, $V_A^\bot=\{h_\theta | \theta \in S_\bot\}$
+
+    - Concept indentified if: $S_\bot = S_\top$ and $|S_\top|=1$. $V_A(D)=\emptyset$ if $S_\bot =\emptyset \vee S_\top = \emptyset$
+
+    \subsection{Decision Trees}
+    \textbf{Splitting } $\Pi=\{M-1, ..., M_p\} $ is finite partition of (sub)feature Space $\mathcal{M'}$
+
+    - induces splitting of $\{1, ..., n\}$ into $I_{D'}(M_1), ..., I_{D'}(M_p)$ (sets of indices)
+
+    - monothetic splits: based on 1 feature
+
+    - simple split: monothetic, into all realizations $M=\{\bar{m} \in M| m_1=a(,b...)\}$
+
+    - binary split: monothetic, into 2 sets $M= $  $\{\bar{m} \in M| m_1\in A\}$ $\cup \{\bar{m} \in M| m_1 \notin A\}$
+
+    - induced hypothesis $h_T(\bar{m})=T(v)$, where $v$ is unique leaf s.t. $\bar{m} \in M_v$
+
+    - simple decision trees can represent all hypotheses
+
+    \textbf{Decision Tree Quality Measures}
     \begin{itemize}
-        \item $l(h, D)=\sum_{i=1}^{n}(1-\delta_{y_i, h(x_i)})$
-        \item  $\delta_{ij} =1 \text{ if } i = j,0  \text{ otherwise.}$
-        \item asd
+        \item Number of leaves
+        \item Height (max number of constraints to check)
+        \item External path length (sum of all path lengths from root to leaf)
+        \item Weighted external path length (sum of all path lengths from root to leaf,
+              weighted by number of examples classified in that leaf)
     \end{itemize}
+    Theorem: Given D and bound b, its NP hard to decide existance of decision tree T s.t. $h_T$ fits D and T has ext. p.l. $\leq b$
+
+    \textbf{Majority Class} $Maj_D(M')$ maj. $r\in R$
+
+    \textbf{Number of misclassifications}: $Err_D(M', r)$ in feature subspace $M'$ with majority class $r$
+
+    - $Err_D(T)$: sum up all $Err_D(M_v, T(v))$
+
+    \textbf{pure node} v if $Err_D(M_v, T(v))=0$
+
+    - class distribution $p_D^{M'}(r)$: $p(r)$ in $M_v$
+
+    \textbf{impurity function}
+
+    \newpage
+
 \end{multicols}
+
+\textbf{loss
+    functions (and derivatives)}
+\begin{itemize}
+    \item $l(h, D)=\sum_{i=1}^{n}(1-\delta_{y_i, h(x_i)})$
+    \item  $\delta_{ij} =1 \text{ if } i = j,0  \text{ otherwise.}$
+    \item asd
+\end{itemize}
+
 \end{document}

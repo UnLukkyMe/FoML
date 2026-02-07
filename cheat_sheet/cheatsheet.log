@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10.12) (preloaded format=pdflatex 2025.10.29)  5 FEB 2026 16:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10.12) (preloaded format=pdflatex 2025.10.29)  7 FEB 2026 15:42
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**c:/Users/Richm/Documents/Studium/5Semester/FoML/cheat_sheet/cheatsheet.tex
-(c:/Users/Richm/Documents/Studium/5Semester/FoML/cheat_sheet/cheatsheet.tex
+**c:/Users/Richm/Documents/Studium/5Semester/FoML/FoML/cheat_sheet/cheatsheet.tex
+(c:/Users/Richm/Documents/Studium/5Semester/FoML/FoML/cheat_sheet/cheatsheet.tex
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2023-10-10>
 (S:\ProgrammierShit\MikTeX\tex/latex/extsizes\extarticle.cls
@@ -308,11 +308,11 @@ LaTeX Font Info:    ... okay on input line 38.
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: landscape 
 * h-part:(L,W,R)=(0.0pt, 845.04684pt, 0.0pt)
-* v-part:(T,H,B)=(0.0pt, 597.50787pt, 0.0pt)
+* v-part:(T,H,B)=(0.0pt, 591.81741pt, 5.69046pt)
 * \paperwidth=845.04684pt
 * \paperheight=597.50787pt
 * \textwidth=845.04684pt
-* \textheight=597.50787pt
+* \textheight=591.81741pt
 * \oddsidemargin=-72.26999pt
 * \evensidemargin=-72.26999pt
 * \topmargin=-109.26999pt
@@ -363,33 +363,38 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 44.
  (S:\ProgrammierShit\MikTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Underfull \hbox (badness 10000) in paragraph at lines 64--65
-[]\T1/lmr/bx/n/9 Conjunctive Clau-se $\OML/lmm/m/it/9 ^^R \OT1/lmr/m/n/9 =
+Underfull \hbox (badness 5504) in paragraph at lines 99--100
+[]\T1/lmr/bx/n/9 disjunctive nor-mal form $\OT1/lmr/m/n/9 ^^B =
  []
 
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 80.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 176.
 (S:\ProgrammierShit\MikTeX\tex/latex/lm\ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [1
+)
+Underfull \hbox (badness 10000) in paragraph at lines 186--187
+[]\T1/lmr/bx/n/9 Number of misclas-si-fi-ca-ti-ons\T1/lmr/m/n/9 :
+ []
 
-{C:/Users/Richm/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{S:/ProgrammierShit/MikTeX/fonts/enc/dvips/lm/lm-ec.enc}{S:/ProgrammierShit/MikTeX/fonts/enc/dvips/lm/lm-mathit.enc}{S:/ProgrammierShit/MikTeX/fonts/enc/dvips/lm/lm-rm.enc}{S:/ProgrammierShit/MikTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{S:/ProgrammierShit/MikTeX/fonts/enc/dvips/lm/lm-ts1.enc}{S:/ProgrammierShit/MikTeX/fonts/enc/dvips/lm/lm-mathex.enc}] (cheatsheet.aux)
+[1
+
+{C:/Users/Richm/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{S:/ProgrammierShit/MikTeX/fonts/enc/dvips/lm/lm-ec.enc}{S:/ProgrammierShit/MikTeX/fonts/enc/dvips/lm/lm-mathit.enc}{S:/ProgrammierShit/MikTeX/fonts/enc/dvips/lm/lm-rm.enc}{S:/ProgrammierShit/MikTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{S:/ProgrammierShit/MikTeX/fonts/enc/dvips/lm/lm-mathex.enc}{S:/ProgrammierShit/MikTeX/fonts/enc/dvips/lm/lm-ts1.enc}] [2] (cheatsheet.aux)
  ***********
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2023-10-10>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 4629 strings out of 474823
- 73608 string characters out of 5759866
- 1929043 words of memory out of 5000000
- 26516 multiletter control sequences out of 15000+600000
- 589697 words of font info for 61 fonts, out of 8000000 for 9000
+ 4638 strings out of 474823
+ 73831 string characters out of 5759866
+ 1949043 words of memory out of 5000000
+ 26525 multiletter control sequences out of 15000+600000
+ 595682 words of font info for 63 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,5n,65p,332b,332s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<S:/ProgrammierShit/MikTeX/fonts/type1/public/lm/lmbx10.pfb><S:/ProgrammierShit/MikTeX/fonts/type1/public/lm/lmbx9.pfb><S:/ProgrammierShit/MikTeX/fonts/type1/public/lm/lmex10.pfb><S:/ProgrammierShit/MikTeX/fonts/type1/public/lm/lmmi5.pfb><S:/ProgrammierShit/MikTeX/fonts/type1/public/lm/lmmi6.pfb><S:/ProgrammierShit/MikTeX/fonts/type1/public/lm/lmmi9.pfb><S:/ProgrammierShit/MikTeX/fonts/type1/public/lm/lmr5.pfb><S:/ProgrammierShit/MikTeX/fonts/type1/public/lm/lmr6.pfb><S:/ProgrammierShit/MikTeX/fonts/type1/public/lm/lmr9.pfb><S:/ProgrammierShit/MikTeX/fonts/type1/public/lm/lmsy5.pfb><S:/ProgrammierShit/MikTeX/fonts/type1/public/lm/lmsy6.pfb><S:/ProgrammierShit/MikTeX/fonts/type1/public/lm/lmsy9.pfb>
-Output written on cheatsheet.pdf (1 page, 162365 bytes).
+ 57i,8n,65p,337b,356s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<S:/ProgrammierShit/MikTeX/fonts/type1/public/lm/lmbx10.pfb><S:/ProgrammierShit/MikTeX/fonts/type1/public/lm/lmbx9.pfb><S:/ProgrammierShit/MikTeX/fonts/type1/public/lm/lmex10.pfb><S:/ProgrammierShit/MikTeX/fonts/type1/public/lm/lmmi5.pfb><S:/ProgrammierShit/MikTeX/fonts/type1/public/lm/lmmi6.pfb><S:/ProgrammierShit/MikTeX/fonts/type1/public/lm/lmmi9.pfb><S:/ProgrammierShit/MikTeX/fonts/type1/public/lm/lmr5.pfb><S:/ProgrammierShit/MikTeX/fonts/type1/public/lm/lmr6.pfb><S:/ProgrammierShit/MikTeX/fonts/type1/public/lm/lmr9.pfb><S:/ProgrammierShit/MikTeX/fonts/type1/public/lm/lmsy5.pfb><S:/ProgrammierShit/MikTeX/fonts/type1/public/lm/lmsy6.pfb><S:/ProgrammierShit/MikTeX/fonts/type1/public/lm/lmsy9.pfb><S:/ProgrammierShit/MikTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on cheatsheet.pdf (2 pages, 192814 bytes).
 PDF statistics:
- 78 PDF objects out of 1000 (max. 8388607)
+ 86 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
