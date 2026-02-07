@@ -181,17 +181,29 @@
     \end{itemize}
     Theorem: Given D and bound b, its NP hard to decide existance of decision tree T s.t. $h_T$ fits D and T has ext. p.l. $\leq b$
 
-    \textbf{Majority Class} $Maj_D(M')$ maj. $r\in R$
+    - Majority Class $Maj_D(M')$ maj. $r\in R$
 
-    \textbf{Number of misclassifications}: $Err_D(M', r)$ in feature subspace $M'$ with majority class $r$
+    - Number of Misclassifications: $Err_D(M', r)$ in feature subspace $M'$ with majority class $r$
 
     - $Err_D(T)$: sum up all $Err_D(M_v, T(v))$
 
-    \textbf{pure node} v if $Err_D(M_v, T(v))=0$
+    \textbf{Pure Node} v if $Err_D(M_v, T(v))=0$
 
     - class distribution $p_D^{M'}(r)$: $p(r)$ in $M_v$
 
-    \textbf{impurity function}
+    - Impurity Function $\iota: [0,1 ]^R \to \mathbb{R}$ if
+    \begin{enumerate}
+        \item a
+        \item b
+        \item c
+    \end{enumerate}
+    gets propability distribution as input
+
+    - Impurity of $M'$ is $\iota_D(M')=\iota(p_D^{M'})$
+
+    \textbf{Impurity Reduction} of splitting \\$\Pi=\{M'_1, ..., M'_p\}$ of $M'$ is:
+    
+    $\iota_D(\Pi)=\iota_D(M') - \sum_{i=1}^{p}\frac{|I_D(M'_i)|}{|I_D(M')|}\iota_D(M'_i)$
 
     \newpage
 
