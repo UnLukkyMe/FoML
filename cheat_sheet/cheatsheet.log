@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10.12) (preloaded format=pdflatex 2025.10.29)  7 FEB 2026 15:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10.12) (preloaded format=pdflatex 2025.10.29)  8 FEB 2026 15:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -371,8 +371,23 @@ LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 17
 (S:\ProgrammierShit\MikTeX\tex/latex/lm\ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-Underfull \hbox (badness 10000) in paragraph at lines 186--187
+Underfull \hbox (badness 10000) in paragraph at lines 184--186
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 187--188
 []\T1/lmr/m/n/9 - Num-ber of Misclas-si-fi-ca-ti-ons:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 230--232
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 257--258
+[]\T1/lmr/m/n/9 regularization (pena-li-ze mo-del
  []
 
 [1
@@ -386,13 +401,13 @@ L3 programming layer <2023-10-10>
 Here is how much of TeX's memory you used:
  4638 strings out of 474823
  73831 string characters out of 5759866
- 1952043 words of memory out of 5000000
+ 1961043 words of memory out of 5000000
  26525 multiletter control sequences out of 15000+600000
  595682 words of font info for 63 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  57i,8n,65p,337b,356s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <S:/ProgrammierShit/MikTeX/fonts/type1/public/lm/lmbx10.pfb><S:/ProgrammierShit/MikTeX/fonts/type1/public/lm/lmbx9.pfb><S:/ProgrammierShit/MikTeX/fonts/type1/public/lm/lmex10.pfb><S:/ProgrammierShit/MikTeX/fonts/type1/public/lm/lmmi5.pfb><S:/ProgrammierShit/MikTeX/fonts/type1/public/lm/lmmi6.pfb><S:/ProgrammierShit/MikTeX/fonts/type1/public/lm/lmmi9.pfb><S:/ProgrammierShit/MikTeX/fonts/type1/public/lm/lmr5.pfb><S:/ProgrammierShit/MikTeX/fonts/type1/public/lm/lmr6.pfb><S:/ProgrammierShit/MikTeX/fonts/type1/public/lm/lmr9.pfb><S:/ProgrammierShit/MikTeX/fonts/type1/public/lm/lmsy5.pfb><S:/ProgrammierShit/MikTeX/fonts/type1/public/lm/lmsy6.pfb><S:/ProgrammierShit/MikTeX/fonts/type1/public/lm/lmsy9.pfb><S:/ProgrammierShit/MikTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on cheatsheet.pdf (2 pages, 196003 bytes).
+Output written on cheatsheet.pdf (2 pages, 200515 bytes).
 PDF statistics:
  86 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
