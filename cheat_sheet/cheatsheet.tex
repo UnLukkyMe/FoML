@@ -242,7 +242,7 @@
 
         - Test Data: final estimation (true loss)
 
-        - $h$ \textbf{overfits} $(D, D_V)$ if $\exists h' \in H_A: $\\ $l(h, D) < l(h', D)$ and $l^*(h) > l^*(h')$
+        - $h$ \textbf{overfits} $(D, D_V)$ if $\exists h' \in H_A: $\\ $l(h, D) < l(h', D) \wedge l(h', D_V) < l(h, D_V)$
 
         true loss of $h$ estimated by $l(h, D_V)$
 
@@ -257,9 +257,9 @@
             \item regularization (penalize model complexity in training process)
         \end{itemize}
         \textbf{Pruning}: turn inner node $v$ into leave with label $Maj(M_v)$
-    
+
         \textbf{D.T. pruning Algorithm}
-        
+
         1. given fully trained D.T.
 
         2. prune every inner node als long as pruning doesnt increase validation loss: $l(h_T', D_V) \leq l(h_T, D_V)$
