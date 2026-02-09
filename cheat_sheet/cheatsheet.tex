@@ -6,6 +6,8 @@
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
 
+\usepackage{graphicx}
+
 \usepackage{multicol}
 \usepackage{titlesec}
 
@@ -264,6 +266,91 @@
 
         2. prune every inner node als long as pruning doesnt increase validation loss: $l(h_T', D_V) \leq l(h_T, D_V)$
 
+        \subsection{Linear Regression}
+    $t: M\to R, M \subseteq \mathbb{R}^k, R \subseteq \mathbb{R}$
+
+        - find $w=(w_0, ..., w_k) \in \mathbb{R}^{k+1}$ s.t.:
+
+    $h_w(x_1, ..., x_k) = w_0x_0 + \sum_{i=1}^{k}w_i x_i$
+
+        approximates $t \Leftrightarrow$ $w$ minimizes $l(h_w, D)$ - note: $x_0=1$
+        always! ($w_0$ is bias)
+
+        \textbf{Analytical Solution}
+        \begin{enumerate}
+            \item Partial derivatives: $\frac{\partial l(h_w, D)}{\partial w_i}$
+            \item Set to 0, put in values from $D$
+            \item Solve LGS with Gauss for $w_i$
+        \end{enumerate}
+        \textbf{SGD} (Iterative Solution)
+        \begin{enumerate}
+            \item initialize $w $ randomly
+            \item choose random $1\leq i \leq n$
+            \item $\delta = y_i - h_w(x_i)$ \ \ \ (residual)
+            \item $\Delta w= \delta \cdot x_i$ \ \ \ \ \ \ \ \ (derivatives)
+            \item $w=w+ \eta \cdot \Delta w $ \ \ \ (parameters)
+            \item If $\lnot$converged $\to $2, else return $w$
+        \end{enumerate}
+        - Pros: simple, robust to noisy data, representation independent
+
+        - Cons: stability, convergence problems, sensitive to learning rate $\eta$
+
+        \textbf{BGD} (accumulate derivatives $\forall i$)
+        \begin{enumerate}
+            \item initialize $w$ randomly
+            \item For each $1\leq i \leq n$:
+                  \begin{enumerate}[label*=\arabic*.]
+                      \item $\delta_i = y_i - h_w(x_i)$
+                      \item $\Delta w= \sum_{i=1}^{n} \delta_i \cdot x_i$
+                  \end{enumerate}
+            \item $w=w+\eta \cdot \Delta w$
+            \item If $\lnot$converged $\to $2, else return $w$
+        \end{enumerate}
+        - sequence of examples (batch) are processed together, before updating $w$
+
+        \textbf{IGD}
+        \begin{enumerate}
+            \item initialize $w$ randomly
+            \item For each $1\leq i \leq n$:
+                  \begin{enumerate}[label*=\arabic*.]
+                      \item $\delta_i = y_i - h_w(x_i)$
+                      \item $\Delta w= \sum_{i=1}^{n} \delta_i \cdot x_i$
+                      \item $w=w+\eta \cdot \Delta w$
+                  \end{enumerate}
+            \item If $\lnot$converged $\to $2, else return $w$
+        \end{enumerate}
+        \begin{center}
+            \includegraphics[width=\columnwidth]{Screenshot 2026-02-09 133557.png}
+        \end{center}
+        \textbf{Polynomial Regression}
+
+        Approach: 1. prepare nonlinear combinations of features as features (curse of
+        dimensionality: max $k$ features $5k\leq n$)
+
+        2. then perform linear regression on\\ \textbf{expanded} feature space with SGD, BGD, IGD or analytical approach.
+
+        3. Project solution back to input (feature) space
+
+        - keep original features
+
+        - for $m_i^3$ also include $m_i^2$
+
+    - increase complexity -> increase risk of overfitting
+
+    \textbf{Regularization}
+
+    'penalize model complexity in training process', optimize for $l'(w,D)$:
+
+    $l'(w, D)= l(h_w, D) + \frac{\lambda}{k}\cdot r(w)$
+
+    - Lasso Regression: $r(w)=\sum_{i=1}^{k} |w_i|$ 
+
+    - Ridge Regression: $r(w)=\sum_{i=1}^{k} w_i^2$ 
+
+    - $\lambda$ big -> more regularization -> less complex model
+
+    - $k$: num of features (excluding bias $w_0$)
+
     \newpage
 
 \end{multicols}
@@ -273,7 +360,21 @@
 \begin{itemize}
     \item $l(h, D)=\sum_{i=1}^{n}(1-\delta_{y_i, h(x_i)})$
     \item  $\delta_{ij} =1 \text{ if } i = j,0  \text{ otherwise.}$
-    \item asd
+    \item $l(h, D)=\frac{1}{2n}\sum_{i=1}^{n}( h(x_i) - y_i)^2$ (Mean Squared Error)\\
+          $\frac{\partial l(h, D)}{\partial w_p}=\frac{1}{n}\sum_{i=1}^{n}(h(x_i) - y_i)x_p=\frac{1}{n}\sum_{i=1}^{n}(w_0+w_1x_{i1}+...+w_p x_{ip}-y_i)x_p$
+\end{itemize}
+\textbf{Ableitungsregeln}
+\begin{itemize}
+    \item Produktregel: $(f\cdot g)(x)'=f'(x)\cdot g(x) + f(x) \cdot g'(x)$
+    \item Quotientenregel: $\left(\frac{f}{g}\right)'(x) = \frac{f'(x)g(x) -
+                  f(x)g'(x)}{g^2(x)}$
+
+    \item Kettenregel: $(f\circ g)'(x)=(f'\circ g)(x)\cdot g'(x)=f'(g(x))\cdot g'(x)$\\
+          $(f\circ g\circ h)'(x)= f'(g(h(x))) \cdot g'(h(x)) \cdot h'(x)$
+    \item $\left(\frac{1}{g}\right)'(x) = -\frac{g'(x)}{g^2(x)}$
+    \item $\left(\frac{1}{x^n}\right)'=-nx^{-n-1}$
+    \item $\log_a'(x)=\frac{1}{x \ln(a)}$
+    \item |x|' = $\frac{x}{|x|}$ for $x \neq 0$
 \end{itemize}
 
 \end{document}
