@@ -285,7 +285,7 @@
         \textbf{SGD} (Iterative Solution)
         \begin{enumerate}
             \item initialize $w $ randomly
-            \item choose random $1\leq i \leq n$
+            \item choose random $1\leq i \leq n, T++$
             \item $\delta = y_i - h_w(x_i)$ \ \ \ (residual)
             \item $\Delta w= \delta \cdot x_i$ \ \ \ \ \ \ \ \ (derivatives)
             \item $w=w+ \eta \cdot \Delta w $ \ \ \ (parameters)
@@ -298,10 +298,10 @@
         \textbf{BGD} (accumulate derivatives $\forall i$)
         \begin{enumerate}
             \item initialize $w$ randomly
-            \item For each $1\leq i \leq n$:
+            \item For each $1\leq i \leq n, T++$:
                   \begin{enumerate}[label*=\arabic*.]
-                      \item $\delta_i = y_i - h_w(x_i)$
-                      \item $\Delta w= \sum_{i=1}^{n} \delta_i \cdot x_i$
+                      \item $\delta = y_i - h_w(x_i)$
+                      \item $\Delta w= \Delta w + \delta \cdot x_i$
                   \end{enumerate}
             \item $w=w+\eta \cdot \Delta w$
             \item If $\lnot$converged $\to $2, else return $w$
@@ -311,10 +311,10 @@
         \textbf{IGD}
         \begin{enumerate}
             \item initialize $w$ randomly
-            \item For each $1\leq i \leq n$:
+            \item For each $1\leq i \leq n, T++$:
                   \begin{enumerate}[label*=\arabic*.]
-                      \item $\delta_i = y_i - h_w(x_i)$
-                      \item $\Delta w= \sum_{i=1}^{n} \delta_i \cdot x_i$
+                      \item $\delta = y_i - h_w(x_i)$
+                      \item $\Delta w= \delta \cdot x_i$
                       \item $w=w+\eta \cdot \Delta w$
                   \end{enumerate}
             \item If $\lnot$converged $\to $2, else return $w$
@@ -335,21 +335,61 @@
 
         - for $m_i^3$ also include $m_i^2$
 
-    - increase complexity -> increase risk of overfitting
+        - increase complexity -> increase risk of overfitting
 
-    \textbf{Regularization}
+        \textbf{Regularization}
 
-    'penalize model complexity in training process', optimize for $l'(w,D)$:
+        'penalize model complexity in training process', optimize for $l'(w,D)$:
 
     $l'(w, D)= l(h_w, D) + \frac{\lambda}{k}\cdot r(w)$
 
-    - Lasso Regression: $r(w)=\sum_{i=1}^{k} |w_i|$ 
+        - Lasso Regression: $r(w)=\sum_{i=1}^{k} |w_i|$
 
-    - Ridge Regression: $r(w)=\sum_{i=1}^{k} w_i^2$ 
+        - Ridge Regression: $r(w)=\sum_{i=1}^{k} w_i^2$
 
-    - $\lambda$ big -> more regularization -> less complex model
+        - $\lambda$ big -> more regularization -> less complex model
 
-    - $k$: num of features (excluding bias $w_0$)
+        - $k$: num of features (excluding bias $w_0$)
+
+        \textbf{Develop} (S,B,I)GD for \textbf{specific loss function} $l(x)$:
+
+        1. get 1st derivative $l'(x)$ of loss:
+
+        for 1 Data example: $n=1$, leave out $\sum$
+
+        2. find $-\delta=h_w(x_i)-y_i$ in 1st derivative
+
+        3. replace line 4 (derivatives) with:
+
+    $\Delta w = l'(x)$ but substitute $\delta$ (!$\cdot -1$!)
+
+        \textbf{Logistic Regression (Classification)}
+
+        'find optimal hyperplane $w$' by optimization,  to get $h_w$, to get classifier:
+
+    $h_w^c(z)= 1$ if $h_w(z) \geq \frac{1}{2}$, 0 otherwise
+
+        - 'discriminative' classifier
+
+        - only reasonable for binary $R=\{0, 1\}$ ($|R|> 2$ induces order bias)
+
+        - Training: optimizes $w$ for $l(h_w, D)$
+
+        - Prediction: performed by $h_w^c$ (different)
+
+        - Discriminating Hyperplane 1 Dimension less than $w$ (Plane -> Line -> Point)
+
+        > logistic function: $h_w^\sigma (z)=\sigma(h_w(z))$
+
+        > logistic classifier: $h_w^{c, \sigma}(z)=1$ if $h_w^\sigma(z) \geq \frac{1}{2}$, 0 otherwise
+
+        - 'generative' classifier
+
+        - $h_w^\sigma(z)$ gives prop, that $z$ is class 1
+
+        > MLE Maximum Likelihood Estimator given $H_A$ for $D$ is: $\hat{h}= \arg \max_{h\in H_A} P[D; h]$
+
+    \subsection{Support Vector Machines}
 
     \newpage
 
@@ -362,6 +402,10 @@
     \item  $\delta_{ij} =1 \text{ if } i = j,0  \text{ otherwise.}$
     \item $l(h, D)=\frac{1}{2n}\sum_{i=1}^{n}( h(x_i) - y_i)^2$ (Mean Squared Error)\\
           $\frac{\partial l(h, D)}{\partial w_p}=\frac{1}{n}\sum_{i=1}^{n}(h(x_i) - y_i)x_p=\frac{1}{n}\sum_{i=1}^{n}(w_0+w_1x_{i1}+...+w_p x_{ip}-y_i)x_p$
+    \item $l'(w, D)=\frac{1}{2n}\sum_{i=1}^{n}( h(x_i) - y_i)^2 + \frac{\lambda}{k}\sum_{i=1}^{k}w_i^2$(Ridge Regression)\\
+          $\frac{\partial l'(w, D)}{\partial w_p}=\frac{1}{n}\sum_{i=1}^{n}(h(x_i) - y_i)x_p+ 2\lambda w_p, \ w_p \in \{0, w_1,... w_k\}$ WARUM NICHT: $... + \frac{2\lambda}{k}w_p$?!?!?!??!?!?!
+    \item       $\ell_\sigma(h, D) = -\frac{1}{n} \sum_{i=1}^{n} \left(          y_i \cdot \log\bigl(h(x_i)\bigr)          + (1 - y_i) \cdot \log\bigl(1 - h(x_i)\bigr)          \right)$(Logistic Loss)\\
+          $\frac{\partial \ell_\sigma(h_w^\sigma, D)}{\partial w_p} = -\frac{1}{n} \sum_{i=1}^{n}\left( y_i - h_w^\sigma(x_i) \right)\cdot x_{ip}$
 \end{itemize}
 \textbf{Ableitungsregeln}
 \begin{itemize}
@@ -374,7 +418,8 @@
     \item $\left(\frac{1}{g}\right)'(x) = -\frac{g'(x)}{g^2(x)}$
     \item $\left(\frac{1}{x^n}\right)'=-nx^{-n-1}$
     \item $\log_a'(x)=\frac{1}{x \ln(a)}$
-    \item |x|' = $\frac{x}{|x|}$ for $x \neq 0$
+    \item $\ln_e(x)' = \frac{1}{x}$
+    \item |x|' = $\frac{x}{|x|} = sgn(x)$ for $x \neq 0$
 \end{itemize}
 
 \end{document}
