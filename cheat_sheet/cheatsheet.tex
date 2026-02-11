@@ -392,6 +392,8 @@
         \subsection{Support Vector Machines}
         'learn optimal discriminating Hyperplane with maximal margin directly'
 
+    $H(w)=\{(z_1, ..., z_k) \in \mathbb{R}^k | w_0 + w_1x_1+...+w_kx_k=0\}$
+
         - Normal Representation $w=(w_0, ..., w_k)$ is normal to discriminating Hyperplane $H(w)$
 
         - $H_1$ closest $x_i$ with $y_i=1$
@@ -422,7 +424,22 @@
 
         -> no additional effort for non linear classification (linear classifier for free)
 
-    \textbf{Linear Seperability}
+        \textbf{D Linearly Seperable} if:
+
+    $\exists w_0, w_1, ..., w_k: y_i'\cdot (w_0+ w_1x_1 + ... + w_kx_k)>0$
+
+        where: $y_i'=$ 1 if $(y_i=1)$, -1 if $(y_i=0)$
+
+        1. $\forall i$ where $y_i=1: h(x_i)>0$
+
+        2. $\forall i$ where $y_i=0: h(x_i)<0$ 
+
+        Proof by finding $w$, then transform to discriminating hyperplane (eg point $x$):
+
+        - $w_0 + w_1x_1 =0 \Rightarrow x= - \frac{w_0}{w_1}$
+        
+        Disprove by finding contradiction in System of
+    inequations.
 
     \newpage
 
