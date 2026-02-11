@@ -389,7 +389,40 @@
 
         > MLE Maximum Likelihood Estimator given $H_A$ for $D$ is: $\hat{h}= \arg \max_{h\in H_A} P[D; h]$
 
-    \subsection{Support Vector Machines}
+        \subsection{Support Vector Machines}
+        'learn optimal discriminating Hyperplane with maximal margin directly'
+
+        - Normal Representation $w=(w_0, ..., w_k)$ is normal to discriminating Hyperplane $H(w)$
+
+        - $H_1$ closest $x_i$ with $y_i=1$
+
+        - $H_0$ closest $x_i$ with $y_i=0$
+
+        - Hyperplanes $H_1, H_0$ parallel to $H(w)$
+
+        \textbf{Margin} distance($H_1, H_0$) $=\frac{2}{||\vec{w}||}$
+
+        - Hinge Loss: only falsly classified data causes loss
+
+        \textbf{Hard Margin SVM}: no misclassifications/boundary violations
+
+        - $\hat{w}=arg \min_w \frac{1}{2}\vec{w}\vec{w}^T $, $l_h(h_w, D)=0$
+
+        \textbf{Soft Margin SVM}: $\lambda$ trades margin size against boundary violations
+
+    $\lambda$ small: larger margin, more violations
+
+    $\lambda$ big: smaller margin, less violations
+
+        - $\hat{w}=arg \min_w \frac{1}{2} \vec{w}\vec{w}^T+ \lambda l_h(h_w, D)$
+
+        \textbf{Kernel Trick}: Kernels permits nonlinear seperation in input space $\mathbb{R}^k$ (through linear seperation in $\mathbb{R}^{k+d}$)
+
+        - with suitable Kernel: no actual computations in $\mathbb{R}^{k+d}$
+
+        -> no additional effort for non linear classification (linear classifier for free)
+
+    \textbf{Linear Seperability}
 
     \newpage
 
@@ -406,6 +439,7 @@
           $\frac{\partial l'(w, D)}{\partial w_p}=\frac{1}{n}\sum_{i=1}^{n}(h(x_i) - y_i)x_p+ 2\lambda w_p, \ w_p \in \{0, w_1,... w_k\}$ WARUM NICHT: $... + \frac{2\lambda}{k}w_p$?!?!?!??!?!?!
     \item       $\ell_\sigma(h, D) = -\frac{1}{n} \sum_{i=1}^{n} \left(          y_i \cdot \log\bigl(h(x_i)\bigr)          + (1 - y_i) \cdot \log\bigl(1 - h(x_i)\bigr)          \right)$(Logistic Loss)\\
           $\frac{\partial \ell_\sigma(h_w^\sigma, D)}{\partial w_p} = -\frac{1}{n} \sum_{i=1}^{n}\left( y_i - h_w^\sigma(x_i) \right)\cdot x_{ip}$
+    \item $l_h(h, D)=\frac{1}{n}\sum_{i=1}^{n}\max (0, 1-(2y_i-1)h(x_i))$  (Hinge Loss)
 \end{itemize}
 \textbf{Ableitungsregeln}
 \begin{itemize}
