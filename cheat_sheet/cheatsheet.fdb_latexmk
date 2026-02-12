@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1770900727.11212 "/home/aaron/Documents/Documents/leipzig/studium/5semester/FoML/cheatsheet/FoML/cheat_sheet/cheatsheet.tex" "cheatsheet.pdf" "cheatsheet" 1770900728.16636 0
+["pdflatex"] 1770900978.78817 "/home/aaron/Documents/Documents/leipzig/studium/5semester/FoML/cheatsheet/FoML/cheat_sheet/cheatsheet.tex" "cheatsheet.pdf" "cheatsheet" 1770900979.66739 0
   "/etc/texmf/web2c/texmf.cnf" 1763995679.9362 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/aaron/Documents/Documents/leipzig/studium/5semester/FoML/cheatsheet/FoML/cheat_sheet/cheatsheet.tex" 1770900726.84671 19708 86d98724726005b5177f3721f0b2c7ca ""
+  "/home/aaron/Documents/Documents/leipzig/studium/5semester/FoML/cheatsheet/FoML/cheat_sheet/cheatsheet.tex" 1770900978.54994 19731 3b886b3038c1194b04d35962e0121ade ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrm0900.tfm" 1136768653 3584 d3d8ac8b25ca19c0a40b86a5db1e8ccc ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1246382020 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -96,8 +96,8 @@
   "Screenshot 2026-02-09 133557.png" 1770892190.66607 29695 d96dd68a8e65e95c6288056e0bff73b7 ""
   "Screenshot From 2026-02-12 12-17-33.png" 1770895053.24166 67362 949b9c24515debe435c9990c9a71a268 ""
   "asd.png" 1770895292.7246 98063 f622090ab9f2b334fd396cc3a85dc396 ""
-  "cheatsheet.aux" 1770900727.98771 934 668dd40484ff76f497b2da54dd46793e "pdflatex"
-  "cheatsheet.tex" 1770900726.84671 19708 86d98724726005b5177f3721f0b2c7ca ""
+  "cheatsheet.aux" 1770900979.56869 934 668dd40484ff76f497b2da54dd46793e "pdflatex"
+  "cheatsheet.tex" 1770900978.54994 19731 3b886b3038c1194b04d35962e0121ade ""
   "example.png" 1770896168.41087 85721 61b81e2b556c901ebb12c1298e6edc86 ""
   (generated)
   "cheatsheet.aux"
