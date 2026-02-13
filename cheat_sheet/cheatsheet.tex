@@ -471,25 +471,53 @@
 
     $a$(weighted sum of previous states)
 
+        - OR: $N=W\in \mathbb{R}^{(V\cup I) \times V}$ (adj matrix)
+
         - softmax $\sigma: \mathbb{R}^V \to \mathbb{R}^V$ outputs distribution over inputs
 
-    - FeedForward N: no loops, no cycles
+        - FeedForward N: no loops, no cycles, every node reachable from 1 input node
         \begin{center}
             \includegraphics[width=\columnwidth]{example.png}
         \end{center}
     $w_0*i_0=w_0$ is bias, noted above node
 
-    Characteristics: 1. input, 2. internal nodes, 3. layers, 4. type (FFN/RNN?)
+        Characteristics: 1. input, 2. internal nodes, 3. layers, 4. type (FFN/RNN?)
 
-    \textbf{Induced Regression Hypothesis} 
-    
+        \textbf{Induced Regression Hypothesis}
+
     $h_W^v(z): \mathbb{R}' \to \mathbb{R}, h_W^v(z)=s_v^{(m)}$
 
-    Forward Pass with fixed output node
+        Forward Pass with fixed output node
 
-    \textbf{Neural Network Training}
+        \textbf{Neural Network Training}
 
-    backward propagation gradients
+        compute gradients gradients
+
+        > Gradients of Nodes $\frac{\partial L}{\partial r_v}=$
+
+        1. $(s_v - y)\cdot H(r_v) $ if $v$ designated o node
+
+        2. 0 if $v$ other o node
+
+        3. $H(r_v)\cdot \sum_{v'\in V} W_{vv'}\cdot \frac{\partial L}{\partial r_{v'}}$ otherwise
+
+        > Gradients of Edges $\frac{\partial l  }{\partial W_{vv'}}$:  'State of predecessor $\cdot$ gradient of successor'
+
+    \textbf{FF NN Training with SGD}
+    \begin{enumerate}
+        \item initialize $W$ randomly
+        \item choose random $1\leq i \leq n, T++$
+        \item compute states $s_v$ (forward pass)
+        \item compute gradients $\Delta L$ for $(x_i, y_i)$ (backward pass)
+        \item $W = W - \eta \cdot \Delta L$ (update weights)
+        \item  If ¬converged →2, else return $W$
+    \end{enumerate}
+
+    - RNNs good for sequential data, gives 'sequence regression hypothesis'
+
+    \textbf{m-unroll of RNN}: FNN with m layers.
+
+    backpropagation through time: unroll RNN, compute gradients for each layer, then average gradients for each parameter over all layers
 
     \newpage
 
@@ -500,7 +528,7 @@
 \begin{itemize}
     \item $l(h, D)=\sum_{i=1}^{n}(1-\delta_{y_i, h(x_i)})$
     \item  $\delta_{ij} =1 \text{ if } i = j,0  \text{ otherwise.}$
-    \item $l(h, D)=\frac{1}{2n}\sum_{i=1}^{n}( h(x_i) - y_i)^2$ (Mean Squared Error)\\
+    \item $l_2(h, D)=\frac{1}{2n}\sum_{i=1}^{n}( h(x_i) - y_i)^2$ (Mean Squared Error)\\
           $\frac{\partial l(h, D)}{\partial w_p}=\frac{1}{n}\sum_{i=1}^{n}(h(x_i) - y_i)x_p=\frac{1}{n}\sum_{i=1}^{n}(w_0+w_1x_{i1}+...+w_p x_{ip}-y_i)x_p$
     \item $l'(w, D)=\frac{1}{2n}\sum_{i=1}^{n}( h(x_i) - y_i)^2 + \frac{\lambda}{k}\sum_{i=1}^{k}w_i^2$(Ridge Regression)\\
           $\frac{\partial l'(w, D)}{\partial w_p}=\frac{1}{n}\sum_{i=1}^{n}(h(x_i) - y_i)x_p+ 2\lambda w_p, \ w_p \in \{0, w_1,... w_k\}$ WARUM NICHT: $... + \frac{2\lambda}{k}w_p$?!?!?!??!?!?!
