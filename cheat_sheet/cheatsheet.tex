@@ -524,7 +524,9 @@
 
         - softmax $\sigma: \mathbb{R}^V \to \mathbb{R}^V$ outputs distribution over inputs
 
-        - input -> encoder -> decoder -> output
+        - input -> (word) embedding -> encoder ->attention layer -> decoder -> output
+
+        - FF attention layer indicates rellevant source parts
 
     \newpage
 
