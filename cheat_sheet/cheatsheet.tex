@@ -473,8 +473,6 @@
 
         - OR: $N=W\in \mathbb{R}^{(V\cup I) \times V}$ (adj matrix)
 
-        - softmax $\sigma: \mathbb{R}^V \to \mathbb{R}^V$ outputs distribution over inputs
-
         - FeedForward N: no loops, no cycles, every node reachable from 1 input node
         \begin{center}
             \includegraphics[width=\columnwidth]{example.png}
@@ -503,21 +501,30 @@
 
         > Gradients of Edges $\frac{\partial l  }{\partial W_{vv'}}$:  'State of predecessor $\cdot$ gradient of successor'
 
-    \textbf{FF NN Training with SGD}
-    \begin{enumerate}
-        \item initialize $W$ randomly
-        \item choose random $1\leq i \leq n, T++$
-        \item compute states $s_v$ (forward pass)
-        \item compute gradients $\Delta L$ for $(x_i, y_i)$ (backward pass)
-        \item $W = W - \eta \cdot \Delta L$ (update weights)
-        \item  If ¬converged →2, else return $W$
-    \end{enumerate}
+        \textbf{FF NN Training with SGD}
+        \begin{enumerate}
+            \item initialize $W$ randomly
+            \item choose random $1\leq i \leq n, T++$
+            \item compute states $s_v$ (forward pass)
+            \item compute gradients $\Delta L$ for $(x_i, y_i)$ (backward pass)
+            \item $W = W - \eta \cdot \Delta L$ (update weights)
+            \item  If ¬converged →2, else return $W$
+        \end{enumerate}
 
-    - RNNs good for sequential data, gives 'sequence regression hypothesis'
+        - RNNs good for sequential data, gives 'sequence regression hypothesis'
 
-    \textbf{m-unroll of RNN}: FNN with m layers.
+        \textbf{m-unroll of RNN}: FNN with m layers.
 
-    backpropagation through time: unroll RNN, compute gradients for each layer, then average gradients for each parameter over all layers
+        backpropagation through time: unroll RNN, compute gradients for each layer,
+        then average gradients for each parameter over all layers
+
+        \textbf{Transformer}
+
+        'multiclass classification with attention'
+
+        - softmax $\sigma: \mathbb{R}^V \to \mathbb{R}^V$ outputs distribution over inputs
+
+        - input -> encoder -> decoder -> output
 
     \newpage
 
@@ -526,8 +533,8 @@
 \textbf{loss
     functions (and derivatives)}
 \begin{itemize}
-    \item $l(h, D)=\sum_{i=1}^{n}(1-\delta_{y_i, h(x_i)})$
-    \item  $\delta_{ij} =1 \text{ if } i = j,0  \text{ otherwise.}$
+    \item $l_{0/1}(h, D)=\sum_{i=1}^{n}(1-\delta_{y_i, h(x_i)})$\\
+          ->  $\delta_{ij} =1 \text{ if } i = j,0  \text{ otherwise.}$
     \item $l_2(h, D)=\frac{1}{2n}\sum_{i=1}^{n}( h(x_i) - y_i)^2$ (Mean Squared Error)\\
           $\frac{\partial l(h, D)}{\partial w_p}=\frac{1}{n}\sum_{i=1}^{n}(h(x_i) - y_i)x_p=\frac{1}{n}\sum_{i=1}^{n}(w_0+w_1x_{i1}+...+w_p x_{ip}-y_i)x_p$
     \item $l'(w, D)=\frac{1}{2n}\sum_{i=1}^{n}( h(x_i) - y_i)^2 + \frac{\lambda}{k}\sum_{i=1}^{k}w_i^2$(Ridge Regression)\\
@@ -535,6 +542,9 @@
     \item       $\ell_\sigma(h, D) = -\frac{1}{n} \sum_{i=1}^{n} \left(          y_i \cdot \log\bigl(h(x_i)\bigr)          + (1 - y_i) \cdot \log\bigl(1 - h(x_i)\bigr)          \right)$(Logistic Loss)\\
           $\frac{\partial \ell_\sigma(h_w^\sigma, D)}{\partial w_p} = -\frac{1}{n} \sum_{i=1}^{n}\left( y_i - h_w^\sigma(x_i) \right)\cdot x_{ip}$
     \item $l_h(h, D)=\frac{1}{n}\sum_{i=1}^{n}\max (0, 1-(2y_i-1)h(x_i))$  (Hinge Loss)
+    \item  $\frac{1}{n}\sum_{i=1}^{n}H(1_{y_i}, h(x_i))$  (Cross Entropy Loss)\\
+          - $H(p, p')=-\sum_{r \in R} p(r) \log_2 p'(r)$\\
+          $\frac{\partial H(1_y, p)}{\partial s_v}=\frac{p(v)-1_y(v)}{\ln 2}$
 \end{itemize}
 \textbf{Ableitungsregeln}
 \begin{itemize}
