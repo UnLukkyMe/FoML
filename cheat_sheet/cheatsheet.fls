@@ -169,6 +169,13 @@ INPUT .\example.png
 INPUT .\example.png
 INPUT .\example.png
 INPUT .\example.png
+INPUT .\dbscan.png
+INPUT .\dbscan.png
+INPUT .\dbscan.png
+INPUT .\dbscan.png
+INPUT .\dbscan.png
+INPUT .\dbscan.png
+INPUT .\dbscan.png
 INPUT S:\ProgrammierShit\MikTeX\fonts\tfm\public\lm\ec-lmr6.tfm
 INPUT S:\ProgrammierShit\MikTeX\fonts\tfm\public\lm\ec-lmr5.tfm
 INPUT cheatsheet.aux

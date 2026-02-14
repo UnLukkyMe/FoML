@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10.12) (preloaded format=pdflatex 2025.10.29)  13 FEB 2026 15:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10.12) (preloaded format=pdflatex 2025.10.29)  14 FEB 2026 11:42
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -450,24 +450,39 @@ File: example.png Graphic file (type png)
 <use example.png>
 Package pdftex.def Info: example.png  used on input line 478.
 (pdftex.def)             Requested size: 161.00937pt x 101.60263pt.
- [2 <./Screenshot From 2026-02-12 12-17-33.png> <./asd.png> <./example.png>] [3] (cheatsheet.aux)
+
+Underfull \hbox (badness 7344) in paragraph at lines 547--548
+[]\T1/lmr/bx/n/9 DBSCAN \T1/lmr/m/n/9 (Den-si-ty Ba-sed Spa-ti-al
+ []
+
+<dbscan.png, id=26, 436.63126pt x 178.41656pt>
+File: dbscan.png Graphic file (type png)
+<use dbscan.png>
+Package pdftex.def Info: dbscan.png  used on input line 551.
+(pdftex.def)             Requested size: 161.00937pt x 65.78984pt.
+[2 <./Screenshot From 2026-02-12 12-17-33.png> <./asd.png> <./example.png> <./dbscan.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 582--583
+
+ []
+
+[3] (cheatsheet.aux)
  ***********
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2023-10-10>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 5465 strings out of 474823
- 86361 string characters out of 5759866
+ 5472 strings out of 474823
+ 86479 string characters out of 5759866
  1985043 words of memory out of 5000000
- 27323 multiletter control sequences out of 15000+600000
+ 27330 multiletter control sequences out of 15000+600000
  595682 words of font info for 63 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  57i,8n,65p,337b,396s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <S:/ProgrammierShit/MikTeX/fonts/type1/public/lm/lmbx10.pfb><S:/ProgrammierShit/MikTeX/fonts/type1/public/lm/lmbx9.pfb><S:/ProgrammierShit/MikTeX/fonts/type1/public/lm/lmex10.pfb><S:/ProgrammierShit/MikTeX/fonts/type1/public/lm/lmmi5.pfb><S:/ProgrammierShit/MikTeX/fonts/type1/public/lm/lmmi6.pfb><S:/ProgrammierShit/MikTeX/fonts/type1/public/lm/lmmi9.pfb><S:/ProgrammierShit/MikTeX/fonts/type1/public/lm/lmr5.pfb><S:/ProgrammierShit/MikTeX/fonts/type1/public/lm/lmr6.pfb><S:/ProgrammierShit/MikTeX/fonts/type1/public/lm/lmr9.pfb><S:/ProgrammierShit/MikTeX/fonts/type1/public/lm/lmsy5.pfb><S:/ProgrammierShit/MikTeX/fonts/type1/public/lm/lmsy6.pfb><S:/ProgrammierShit/MikTeX/fonts/type1/public/lm/lmsy9.pfb><S:/ProgrammierShit/MikTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on cheatsheet.pdf (3 pages, 420573 bytes).
+Output written on cheatsheet.pdf (3 pages, 457708 bytes).
 PDF statistics:
- 98 PDF objects out of 1000 (max. 8388607)
+ 100 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 26 words of extra memory for PDF output out of 10000 (max. 10000000)
 

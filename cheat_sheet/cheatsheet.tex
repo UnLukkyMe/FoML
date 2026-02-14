@@ -528,6 +528,38 @@
 
         - FF attention layer indicates rellevant source parts
 
+        \subsection{Unsupervised Learning}
+    $h: M \to \{1, ..., c\}$ assigns each point a \textbf{cluster}: names (1, ..., c) arbitrary
+
+        - loss is avg of squared euclidian distance to cluster mean (centroid)
+
+        \textbf{c-means (Lloyds) Algorithm}
+        \begin{enumerate}
+            \item init c centroids $m_1, ..., m_c$ random
+            \item Add each $i$ of $x_i$ to closest centroids ($m_j$) Set $I_j$
+            \item Update centroids to mean of assigned points. $m_j= \frac{1}{n}\sum_{i\in I_j}
+                      x_i$
+        \end{enumerate}
+        - induced hypothesis: $h_{m_1, ..., m_c}(x)=\arg \min_{1\leq j \leq c} ||x-m_j||^2$
+
+        - $c$ needs to eb known in advance: elbow method: plot loss for  $1\leq c\leq c_{\max}$, look for 'elbow' where loss reduction flattens
+
+        \textbf{DBSCAN} (Density Based Spatial Clustering of Applications with Noise)
+    
+        - Hyperparameters: $\epsilon$ (radius), $c_{\min}$ (min points in $\epsilon$-neighborhood to be core  )
+        \begin{center}
+            \includegraphics[width=\columnwidth]{dbscan.png}
+        \end{center}
+
+        - results in set of cluster and outliers (noise), not part of any cluster
+
+        \textbf{Hierarchical Clustering}
+        \begin{enumerate}
+            \item Start with singleton clusters
+            \item greedily merge minimal scoring clusters to new clusters
+            \item Stop combination once cluster-cluster score > threshold $\theta$ 
+        \end{enumerate}
+
     \newpage
 
 \end{multicols}
@@ -547,6 +579,7 @@
     \item  $\frac{1}{n}\sum_{i=1}^{n}H(1_{y_i}, h(x_i))$  (Cross Entropy Loss)\\
           - $H(p, p')=-\sum_{r \in R} p(r) \log_2 p'(r)$\\
           $\frac{\partial H(1_y, p)}{\partial s_v}=\frac{p(v)-1_y(v)}{\ln 2}$
+    \item  $l_V(h, D)=\frac{1}{n}\sum_{i=1}^{n}||x_i-\mu_i||^2$ where $\mu_i$ is centroid of cluster that $x_i$ belongs to (euclidean distance to cluster mean)\\
 \end{itemize}
 \textbf{Ableitungsregeln}
 \begin{itemize}
