@@ -1,6 +1,6 @@
-PWD c:\Users\Richm\Documents\Studium\5Semester\FoML\FoML\cheat_sheet
+PWD c:\Users\Richm\Documents\Studium\5Semester\FoML\FoML\cheat_sheet\fitting_cheat_sheet
 INPUT C:\Users\Richm\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
-INPUT c:\Users\Richm\Documents\Studium\5Semester\FoML\FoML\cheat_sheet\cheatsheet.tex
+INPUT c:\Users\Richm\Documents\Studium\5Semester\FoML\FoML\cheat_sheet\fitting_cheat_sheet\cheatsheet.tex
 OUTPUT cheatsheet.log
 INPUT S:\ProgrammierShit\MikTeX\tex\latex\extsizes\extarticle.cls
 INPUT S:\ProgrammierShit\MikTeX\tex\latex\extsizes\extarticle.cls
@@ -155,20 +155,6 @@ INPUT .\Screenshot From 2026-02-12 12-17-33.png
 INPUT .\Screenshot From 2026-02-12 12-17-33.png
 INPUT .\Screenshot From 2026-02-12 12-17-33.png
 INPUT .\Screenshot From 2026-02-12 12-17-33.png
-INPUT .\asd.png
-INPUT .\asd.png
-INPUT .\asd.png
-INPUT .\asd.png
-INPUT .\asd.png
-INPUT .\asd.png
-INPUT .\asd.png
-INPUT .\example.png
-INPUT .\example.png
-INPUT .\example.png
-INPUT .\example.png
-INPUT .\example.png
-INPUT .\example.png
-INPUT .\example.png
 INPUT .\dbscan.png
 INPUT .\dbscan.png
 INPUT .\dbscan.png
@@ -176,13 +162,6 @@ INPUT .\dbscan.png
 INPUT .\dbscan.png
 INPUT .\dbscan.png
 INPUT .\dbscan.png
-INPUT .\rl.jpg
-INPUT .\rl.jpg
-INPUT .\rl.jpg
-INPUT .\rl.jpg
-INPUT .\rl.jpg
-INPUT .\rl.jpg
-INPUT .\rl.jpg
 INPUT S:\ProgrammierShit\MikTeX\fonts\tfm\public\lm\ec-lmr6.tfm
 INPUT S:\ProgrammierShit\MikTeX\fonts\tfm\public\lm\ec-lmr5.tfm
 INPUT cheatsheet.aux

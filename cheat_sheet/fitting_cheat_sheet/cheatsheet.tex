@@ -184,7 +184,6 @@
     Theorem: Given D and bound b, its NP hard to decide existance of decision tree T s.t. $h_T$ fits D and T has ext. p.l. $\leq b$
 
     - Majority Class $Maj_D(M')$ maj. $r\in R$
-    \\
 
     - Number of Misclassifications: $Err_D(M', r)$ in feature subspace $M'$ with majority class $r$
 
@@ -230,7 +229,6 @@
         inductive bias: local optimization (greedy)
 
         \textbf{CART} D.T., binary splits, impurity function: Gini impurity
-        \\
 
         - true loss of $h \in H_A$: misclassifications:\\ $l^*(h)=\sum_{\bar{m}\in M}^{}(1-\delta_{h(\bar{m}), t(\bar{m})})$
 
@@ -394,8 +392,6 @@
 
     $H(w)=\{(z_1, ..., z_k) \in \mathbb{R}^k | w_0 + w_1x_1+...+w_kx_k=0\}$
 
-        - Normal Representation $w=(w_0, ..., w_k)$ is normal to discriminating Hyperplane $H(w)$
-
         - $H_1$ closest $x_i$ with $y_i=1$ ($wz^T=1$)
 
         - $H_0$ closest $x_i$ with $y_i=0$ ($wz^T=-1$)
@@ -455,14 +451,12 @@
             \item $w= w + \eta \cdot \Delta w$
             \item If $l(h_w^H, D)\neq 0$ to 2, else return $w$
         \end{enumerate}
-        Rosenblatt: If D linearly seperable: PT terminates after finitely many corrections
+        Rosenblatt: If D lnrly seprble: PT terminates after finitely many corrections
         \begin{center}
             \includegraphics[width=\columnwidth]{Screenshot From 2026-02-12 12-17-33.png}
         \end{center}
         Nonlinear seperation possible through network of perceptrons
-        \begin{center}
-            \includegraphics[width=\columnwidth]{asd.png}
-        \end{center}
+
         \textbf{Network} $N=(V, E, wt)$, $wt: E\to \mathbb{R}$
 
         - State: $s: V\to \mathbb{R}$
@@ -474,9 +468,7 @@
         - OR: $N=W\in \mathbb{R}^{(V\cup I) \times V}$ (adj matrix)
 
         - FeedForward N: no loops, no cycles, every node reachable from 1 input node
-        \begin{center}
-            \includegraphics[width=\columnwidth]{example.png}
-        \end{center}
+
     $w_0*i_0=w_0$ is bias, noted above node
 
         Characteristics: 1. input, 2. internal nodes, 3. layers, 4. type (FFN/RNN?)
@@ -493,11 +485,11 @@
 
         > Gradients of Nodes $\frac{\partial L}{\partial r_v}=$
 
-        1. $(s_v - y)\cdot H(r_v) $ if $v$ designated o node
+        - $(s_v - y)\cdot H(r_v) $ if $v$ designated o node
 
-        2. 0 if $v$ other o node
+        - 0 if $v$ other o node
 
-        3. $H(r_v)\cdot \sum_{v'\in V} W_{vv'}\cdot \frac{\partial L}{\partial r_{v'}}$ otherwise
+        - $H(r_v)\cdot \sum_{v'\in V} W_{vv'}\cdot \frac{\partial L}{\partial r_{v'}}$ otherwise
 
         > Gradients of Edges $\frac{\partial l  }{\partial W_{vv'}}$:  'State of predecessor $\cdot$ gradient of successor'
 
@@ -560,9 +552,10 @@
             \item Stop combination once cluster-cluster score > threshold $\theta$
         \end{enumerate}
         \section{Reinforcement Learning}
-        \begin{center}
-            \includegraphics[width=\columnwidth]{rl.jpg}
-        \end{center}
+        - Agent -(action)> Environment
+
+        - Env -(state, reward)> Agent
+
         - Environment is propabilistic NFA; has p-distribution for each action in state $q$ (not fully known, completely observable)
 
         - Trace: starts in initial state, respects $\Delta$, ends in terminal state: $q_0 \rightarrow^{a_1} q_1...$
@@ -611,19 +604,19 @@
     \textbf{loss
         functions (and derivatives)}
     \begin{itemize}
-        \item $l_{0/1}(h, D)=\sum_{i=1}^{n}(1-\delta_{y_i, h(x_i)})$\\
+        \item \textbf{(0-1 loss)} $l_{0/1}(h, D)=\sum_{i=1}^{n}(1-\delta_{y_i, h(x_i)})$\\
               ->  $\delta_{ij} =1 \text{ if } i = j,0  \text{ otherwise.}$
-        \item $l_2(h, D)=\frac{1}{2n}\sum_{i=1}^{n}( h(x_i) - y_i)^2$ (Mean Squared Error)\\
+        \item \textbf{(Mean Squared Error)} $l_2(h, D)=\frac{1}{2n}\sum_{i=1}^{n}( h(x_i) - y_i)^2$ \\
               $\frac{\partial l(h, D)}{\partial w_p}=\frac{1}{n}\sum_{i=1}^{n}(h(x_i) - y_i)x_p=\frac{1}{n}\sum_{i=1}^{n}(w_0+w_1x_{i1}+...+w_p x_{ip}-y_i)x_p$
-        \item $l'(w, D)=\frac{1}{2n}\sum_{i=1}^{n}( h(x_i) - y_i)^2 + \frac{\lambda}{k}\sum_{i=1}^{k}w_i^2$(Ridge Regression)\\
-              $\frac{\partial l'(w, D)}{\partial w_p}=\frac{1}{n}\sum_{i=1}^{n}(h(x_i) - y_i)x_p+ 2\lambda w_p, \ w_p \in \{0, w_1,... w_k\}$ WARUM NICHT: $... + \frac{2\lambda}{k}w_p$?!?!?!??!?!?!
-        \item       $\ell_\sigma(h, D) = -\frac{1}{n} \sum_{i=1}^{n} \left(          y_i \cdot \log\bigl(h(x_i)\bigr)          + (1 - y_i) \cdot \log\bigl(1 - h(x_i)\bigr)          \right)$(Logistic Loss)\\
+        \item \textbf{(Ridge Regression)} $l'(w, D)=\frac{1}{2n}\sum_{i=1}^{n}( h(x_i) - y_i)^2 + \frac{\lambda}{k}\sum_{i=1}^{k}w_i^2$\\
+              $\frac{\partial l'(w, D)}{\partial w_p}=\frac{1}{n}\sum_{i=1}^{n}(h(x_i) - y_i)x_p+ 2\lambda w_p, \ w_p \in \{0, w_1,... w_k\}$
+        \item \textbf{(Logistic Loss)}       $\ell_\sigma(h, D) = -\frac{1}{n} \sum_{i=1}^{n} \left(          y_i \cdot \log\bigl(h(x_i)\bigr)          + (1 - y_i) \cdot \log\bigl(1 - h(x_i)\bigr)          \right)$\\
               $\frac{\partial \ell_\sigma(h_w^\sigma, D)}{\partial w_p} = -\frac{1}{n} \sum_{i=1}^{n}\left( y_i - h_w^\sigma(x_i) \right)\cdot x_{ip}$
-        \item $l_h(h, D)=\frac{1}{n}\sum_{i=1}^{n}\max (0, 1-(2y_i-1)h(x_i))$  (Hinge Loss)
-        \item  $\frac{1}{n}\sum_{i=1}^{n}H(1_{y_i}, h(x_i))$  (Cross Entropy Loss)\\
-              - $H(p, p')=-\sum_{r \in R} p(r) \log_2 p'(r)$\\
+        \item \textbf{(Hinge Loss)} $l_h(h, D)=\frac{1}{n}\sum_{i=1}^{n}\max (0, 1-(2y_i-1)h(x_i))$
+        \item  \textbf{(Cross Entropy Loss)} $l_H(h, D)=\frac{1}{n}\sum_{i=1}^{n}H(1_{y_i}, h(x_i))$  \\
+              -> $H(1_y, p)=-\sum_{r \in R} 1_y(r) \log p(r)=-\log p(y)$\\
               $\frac{\partial H(1_y, p)}{\partial s_v}=\frac{p(v)-1_y(v)}{\ln 2}$
-        \item  $l_V(h, D)=\frac{1}{n}\sum_{i=1}^{n}||x_i-\mu_i||^2$ where $\mu_i$ is centroid of cluster that $x_i$ belongs to (euclidean distance to cluster mean)\\
+        \item  \textbf{(average within-cluster variance)} $l_V(h, D)=\frac{1}{n}\sum_{i=1}^{n}||x_i-\mu_i||^2$ where $\mu_i$ is centroid of cluster that $x_i$ belongs to (euclidean distance to cluster mean)
     \end{itemize}
     \textbf{Ableitungsregeln}
     \begin{itemize}

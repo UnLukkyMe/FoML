@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10.12) (preloaded format=pdflatex 2025.10.29)  15 FEB 2026 14:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10.12) (preloaded format=pdflatex 2025.10.29)  15 FEB 2026 15:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**c:/Users/Richm/Documents/Studium/5Semester/FoML/FoML/cheat_sheet/cheatsheet.tex
-(c:/Users/Richm/Documents/Studium/5Semester/FoML/FoML/cheat_sheet/cheatsheet.tex
+**c:/Users/Richm/Documents/Studium/5Semester/FoML/FoML/cheat_sheet/fitting_cheat_sheet/cheatsheet.tex
+(c:/Users/Richm/Documents/Studium/5Semester/FoML/FoML/cheat_sheet/fitting_cheat_sheet/cheatsheet.tex
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2023-10-10>
 (S:\ProgrammierShit\MikTeX\tex/latex/extsizes\extarticle.cls
@@ -403,101 +403,66 @@ LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 17
 (S:\ProgrammierShit\MikTeX\tex/latex/lm\ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-Underfull \hbox (badness 10000) in paragraph at lines 186--188
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 189--190
+Underfull \hbox (badness 10000) in paragraph at lines 188--189
 []\T1/lmr/m/n/9 - Num-ber of Misclas-si-fi-ca-ti-ons:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 232--234
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 259--260
+Underfull \hbox (badness 10000) in paragraph at lines 257--258
 []\T1/lmr/m/n/9 regularization (pena-li-ze mo-del
  []
 
 <Screenshot 2026-02-09 133557.png, id=1, 425.33907pt x 185.94469pt>
 File: Screenshot 2026-02-09 133557.png Graphic file (type png)
 <use Screenshot 2026-02-09 133557.png>
-Package pdftex.def Info: Screenshot 2026-02-09 133557.png  used on input line 323.
+Package pdftex.def Info: Screenshot 2026-02-09 133557.png  used on input line 321.
 (pdftex.def)             Requested size: 161.00937pt x 70.38733pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 397--398
-[]\T1/lmr/m/n/9 - Nor-mal Re-pre-sen-ta-ti-on $\OML/lmm/m/it/9 w \OT1/lmr/m/n/9 =
- []
-
 [1
 
 {C:/Users/Richm/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{S:/ProgrammierShit/MikTeX/fonts/enc/dvips/lm/lm-ec.enc}{S:/ProgrammierShit/MikTeX/fonts/enc/dvips/lm/lm-mathit.enc}{S:/ProgrammierShit/MikTeX/fonts/enc/dvips/lm/lm-rm.enc}{S:/ProgrammierShit/MikTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{S:/ProgrammierShit/MikTeX/fonts/enc/dvips/lm/lm-mathex.enc}{S:/ProgrammierShit/MikTeX/fonts/enc/dvips/lm/lm-ts1.enc} <./Screenshot 2026-02-09 133557.png>]
 <Screenshot From 2026-02-12 12-17-33.png, id=23, 979.66pt x 449.68pt>
 File: Screenshot From 2026-02-12 12-17-33.png Graphic file (type png)
 <use Screenshot From 2026-02-12 12-17-33.png>
-Package pdftex.def Info: Screenshot From 2026-02-12 12-17-33.png  used on input line 460.
+Package pdftex.def Info: Screenshot From 2026-02-12 12-17-33.png  used on input line 456.
 (pdftex.def)             Requested size: 161.00937pt x 73.9058pt.
-<asd.png, id=24, 1111.15125pt x 725.71124pt>
-File: asd.png Graphic file (type png)
-<use asd.png>
-Package pdftex.def Info: asd.png  used on input line 464.
-(pdftex.def)             Requested size: 161.00937pt x 105.15346pt.
-<example.png, id=25, 1137.24875pt x 717.68124pt>
-File: example.png Graphic file (type png)
-<use example.png>
-Package pdftex.def Info: example.png  used on input line 478.
-(pdftex.def)             Requested size: 161.00937pt x 101.60263pt.
 
-Underfull \hbox (badness 7344) in paragraph at lines 547--548
+Underfull \hbox (badness 7344) in paragraph at lines 539--540
 []\T1/lmr/bx/n/9 DBSCAN \T1/lmr/m/n/9 (Den-si-ty Ba-sed Spa-ti-al
  []
 
-<dbscan.png, id=26, 436.63126pt x 178.41656pt>
+<dbscan.png, id=24, 436.63126pt x 178.41656pt>
 File: dbscan.png Graphic file (type png)
 <use dbscan.png>
-Package pdftex.def Info: dbscan.png  used on input line 551.
+Package pdftex.def Info: dbscan.png  used on input line 543.
 (pdftex.def)             Requested size: 161.00937pt x 65.78984pt.
-<rl.jpg, id=27, 1028.84375pt x 416.55624pt>
-File: rl.jpg Graphic file (type jpg)
-<use rl.jpg>
-Package pdftex.def Info: rl.jpg  used on input line 564.
-(pdftex.def)             Requested size: 161.00937pt x 65.18845pt.
 
-Underfull \hbox (badness 5878) in paragraph at lines 580--581
+Underfull \hbox (badness 5878) in paragraph at lines 573--574
 []$\OML/lmm/m/it/9 V\OT1/lmr/m/n/9 (\OML/lmm/m/it/9 q\OT1/lmr/m/n/9 ) = [][] [][] \OML/lmm/m/it/9 P\OT1/lmr/m/n/9 (\OML/lmm/m/it/9 q[]\OMS/lmsy/m/n/9 j\OML/lmm/m/it/9 q; a\OT1/lmr/m/n/9 ) \OMS/lmsy/m/n/9 ^^A
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 590--591
+Underfull \hbox (badness 10000) in paragraph at lines 583--584
 []\T1/lmr/m/n/9 -Q-Value with de-ter-mi-ni-stic po-li-cy
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 626--627
-
- []
-
-[2 <./Screenshot From 2026-02-12 12-17-33.png> <./asd.png> <./example.png> <./dbscan.png> <./rl.jpg>] [3] (cheatsheet.aux)
+[2 <./Screenshot From 2026-02-12 12-17-33.png> <./dbscan.png>] (cheatsheet.aux)
  ***********
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2023-10-10>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 5479 strings out of 474823
- 86569 string characters out of 5759866
+ 5458 strings out of 474823
+ 86397 string characters out of 5759866
  1985043 words of memory out of 5000000
- 27337 multiletter control sequences out of 15000+600000
+ 27316 multiletter control sequences out of 15000+600000
  595682 words of font info for 63 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,8n,65p,344b,396s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 57i,8n,65p,364b,396s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <S:/ProgrammierShit/MikTeX/fonts/type1/public/lm/lmbx10.pfb><S:/ProgrammierShit/MikTeX/fonts/type1/public/lm/lmbx9.pfb><S:/ProgrammierShit/MikTeX/fonts/type1/public/lm/lmex10.pfb><S:/ProgrammierShit/MikTeX/fonts/type1/public/lm/lmmi5.pfb><S:/ProgrammierShit/MikTeX/fonts/type1/public/lm/lmmi6.pfb><S:/ProgrammierShit/MikTeX/fonts/type1/public/lm/lmmi9.pfb><S:/ProgrammierShit/MikTeX/fonts/type1/public/lm/lmr5.pfb><S:/ProgrammierShit/MikTeX/fonts/type1/public/lm/lmr6.pfb><S:/ProgrammierShit/MikTeX/fonts/type1/public/lm/lmr9.pfb><S:/ProgrammierShit/MikTeX/fonts/type1/public/lm/lmsy5.pfb><S:/ProgrammierShit/MikTeX/fonts/type1/public/lm/lmsy6.pfb><S:/ProgrammierShit/MikTeX/fonts/type1/public/lm/lmsy9.pfb><S:/ProgrammierShit/MikTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on cheatsheet.pdf (3 pages, 479397 bytes).
+Output written on cheatsheet.pdf (2 pages, 337179 bytes).
 PDF statistics:
- 101 PDF objects out of 1000 (max. 8388607)
+ 93 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 31 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
